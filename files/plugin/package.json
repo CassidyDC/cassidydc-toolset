@@ -1,7 +1,7 @@
 {
-	"name": "@cassidydc/development-toolset",
-	"version": "1.0.0-plugin-build",
-	"description": "CassidyDC build script for WordPress plugins",
+	"name": "@cassidydc/theme-build",
+	"version": "1.0.0",
+	"description": "CassidyDC build script for WordPress Block themes",
 	"keywords": [
 		"build",
 		"script",
@@ -9,31 +9,24 @@
 		"wordpress"
 	],
 	"author": {
-		"name": "Jacob Cassidy",
-		"email": "jacob@cassidydc.com",
+		"name": "CassidyDC",
+		"email": "info@cassidydc.com",
 		"url": "https://cassidydc.com"
 	},
-	"homepage": "https://github.com/CassidyDC/development-toolset/blob/main/README.md",
+	"homepage": "https://github.com/CassidyDC/cassidydc-toolset/blob/main/README.md",
 	"license": "MIT",
 	"type": "module",
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/CassidyDC/development-toolset"
+		"url": "https://github.com/CassidyDC/cassidydc-toolset"
 	},
 	"bugs": {
-		"url": "https://github.com/CassidyDC/development-toolset/issues"
+		"url": "https://github.com/CassidyDC/cassidydc-toolset/issues"
 	},
 	"devDependencies": {
-		"@wordpress/scripts": "^30.27.0",
-		"copy-webpack-plugin": "^13.0.1",
-		"eslint": "^9.39.1",
+		"@wordpress/scripts": "^31.7.0",
+		"copy-webpack-plugin": "^14.0.0",
 		"fast-glob": "^3.3.3"
-	},
-	"overrides": {
-		"@wordpress/scripts": {
-			"@babel/runtime": "^7.28.4",
-			"webpack-dev-server": "^5.2.2"
-		}
 	},
 	"scripts": {
 		"build": "wp-scripts build",
