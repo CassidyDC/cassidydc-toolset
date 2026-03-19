@@ -1,17 +1,9 @@
+includes:
+	- phpstan/default.neon
+
 parameters:
-	level: 6
 	paths:
-		- wp-content/theme/your-theme
-	excludePaths:
-		analyse:
-			- */.dev-assets/*
-			- */logs/*
-			- */node_modules/*
-			- */vendor/*
-	stubFiles:
-		- vendor/php-stubs/wordpress-stubs/wordpress-stubs.php
-	scanFiles:
-		- .dev-assets/phpstan/stubs/ray-app.stub
+		- themes/cassidydc-block-theme
 	# ignoreErrors:
 	# 	-
 	# 		identifiers:

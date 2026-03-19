@@ -1,0 +1,14 @@
+parameters:
+	level: 6
+	excludePaths:
+		analyseAndScan:
+			- ../../*/build/*
+			- ../../*/logs/*
+			- ../../*/node_modules/*
+      - ../../*/dist/*
+		analyse:
+			- ../../*/vendor/*
+	scanDirectories:
+		- ../plugins
+	scanFiles:
+		- stubs/ray.stub
