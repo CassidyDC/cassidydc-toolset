@@ -1,51 +1,38 @@
-# Created by https://cassidydc.com/development-tools
-
-# Ignore WordPress Core
-/wp-admin/
-/wp-content/index.php
-/wp-content/languages
-/wp-content/plugins/index.php
-/wp-content/themes/index.php
-/wp-includes/
-/index.php
-/license.txt
-/readme.html
-/wp-*.php
-/xmlrpc.php
-
-# Ignore Root's WordPress Core directory
-/wordpress
-
-# Ignore local dev directories
-.ddev
-.dev-assets
-ddev-local-wordpress-script
+# Ignore local development files
+logs
 node_modules
 vendor
-
-# Ignore local dev config files
 composer.lock
 package-lock.json
-wp-config-ddev.php
-wp-config.php
-ray.php
-wp-cli.yml
 
-# Ignore logs
-logs
-*.log
+# Ignore all mu-plugins, except those included below
+/mu-plugins/*
+# !/mu-plugins/cassidydc-clean-core
 
-# Ignore all wp-content files by default, but allow themes and plugins to be added below
-wp-content/*
+# Ignore all plugins, except those included below
+/plugins/*
+# !/plugins/plugin-name
 
-# Ignore WordPress plugins, unless whitelisted below
-!wp-content/plugins/
-wp-content/plugins/*
-# Plugins Whitelist:
-# !wp-content/plugins/plugin-name
+# Ignore all themes, except those included below
+/themes/*
+# !/themes/cassidydc-block-theme
 
-# Ignore WordPress themes, unless whitelisted below
-!wp-content/themes/
-wp-content/themes/*
-# Themes Whitelist:
-# !wp-content/themes/theme-name
+# Ignore other WP files
+languages
+uploads
+upgrade*
+index.php
+
+# Ignore all nested vendor files, except those included below
+**/vendor/*
+# !/themes/cassidydc-block-theme/vendor/composer
+# !/themes/cassidydc-block-theme/vendor/autoload.php
+
+# Ignore third-party files
+ai1wm-backups
+breeze-config
+breeze-minification
+cache
+wflogs
+advanced-cache.php
+object-cache.php

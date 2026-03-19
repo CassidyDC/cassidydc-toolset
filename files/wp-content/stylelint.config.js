@@ -2,13 +2,11 @@
  * Stylelint configuration.
  *
  * @file Manages the configuration settings for Stylelint. Based on the `@wordpress/stylelint-config` package.
- * @author Jacob Cassidy <jacob@cassidydc.com>
+ * @author CassidyDC <info@cassidydc.com>
  * @see https://stylelint.io/user-guide/configure/
  * @type {import('stylelint').Config}
  * @version 1.0.0
  */
-
-'use strict';
 
 export default {
 	extends: [
@@ -16,13 +14,12 @@ export default {
 		'@stylistic/stylelint-config',
 		'stylelint-config-standard',
 		'stylelint-config-standard-scss',
+		'stylelint-plugin-logical-css/configs/recommended',
 	],
 	plugins: [
 		'stylelint-declaration-block-no-ignored-properties',
 		'stylelint-high-performance-animation',
-		'stylelint-no-indistinguishable-colors',
 		'stylelint-plugin-logical-css',
-		'stylelint-use-nesting',
 	],
 	ignoreFiles: [ '**/*.min.css', '**/build/**', '**/vendor/**' ],
 	rules: {
@@ -41,13 +38,13 @@ export default {
 		],
 		'alpha-value-notation': 'number',
 		'color-named': 'never',
-		'csstools/use-nesting': 'always',
 		'custom-property-pattern': [
 			'^([a-z][a-z0-9]*)(--?[a-z0-9]+)*$',
 			{
 				message: 'Expected custom property name to be kebab-case (double dashes are allowed)',
 			},
 		],
+		'declaration-empty-line-before': [ 'never', { except: [ 'after-block' ] } ],
 		'declaration-property-value-keyword-no-deprecated': true,
 		'font-family-no-missing-generic-family-keyword': [
 			true,
@@ -60,17 +57,6 @@ export default {
 		],
 		'font-weight-notation': 'numeric',
 		'function-linear-gradient-no-nonstandard-direction': true,
-		// Uncomment the following line to turn OFF `no-descending-specificity` (when using CSS nesting, since it doesn't play well with nesting)...
-		// 'no-descending-specificity': null,
-		// Uncomment the following lines to turn ON `no-descending-specificity` (when NOT using CSS nesting)...
-		'no-descending-specificity': [
-			true,
-			{
-				ignore: [
-					'selectors-within-list',
-				],
-			},
-		],
 		'number-max-precision': 5,
 		'plugin/declaration-block-no-ignored-properties': true,
 		'plugin/no-low-performance-animation-properties': [
@@ -81,24 +67,6 @@ export default {
 					'border-color',
 					'color',
 				],
-			},
-		],
-		'plugin/stylelint-no-indistinguishable-colors': [
-			true,
-			{
-				threshold: 10,
-			},
-		],
-		'plugin/use-logical-properties-and-values': [
-			true,
-			{
-				severity: 'warning',
-			},
-		],
-		'plugin/use-logical-units': [
-			true,
-			{
-				severity: 'warning',
 			},
 		],
 		'scss/selector-no-redundant-nesting-selector': true,
@@ -112,6 +80,8 @@ export default {
 		// TURN OFF RULES
 		'@stylistic/declaration-colon-newline-after': null,
 		'@stylistic/max-line-length': null,
+		'comment-empty-line-before': null,
+		'no-descending-specificity': null,
 		'scss/operator-no-newline-after': null,
 	},
 	reportDescriptionlessDisables: true,

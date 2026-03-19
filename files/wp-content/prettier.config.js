@@ -2,13 +2,11 @@
  * Prettier configuration.
  *
  * @file Manages the configuration settings for Prettier
- * @author Jacob Cassidy <jacob@cassidydc.com>
+ * @author CassidyDC <info@cassidydc.com>
  * @see https://prettier.io/docs/configuration
  * @type {import("prettier").Config}
  * @version 1.0.0
  */
-
-'use strict';
 
 import wpConfig from '@wordpress/prettier-config';
 

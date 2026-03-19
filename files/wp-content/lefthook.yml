@@ -1,5 +1,3 @@
-colors: false # Removes ANSI escape codes from run output, but not starting/ending output
-
 pre-commit:
   parallel: false
   commands:

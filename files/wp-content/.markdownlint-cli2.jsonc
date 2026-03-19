@@ -21,7 +21,6 @@
 		"whitespace": false
 	},
 	"ignores": [
-		".dev-assets",
 		"node_modules",
 		"vendor"
 	],

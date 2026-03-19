@@ -1,5 +1,5 @@
 {
-	"name": "@cassidydc/development-toolset",
+	"name": "@cassidydc/cassidydc-toolset",
 	"version": "1.0.0",
 	"description": "CassidyDC WordPress code formatting and linting development toolset",
 	"keywords": [
@@ -11,58 +11,63 @@
 		"wordpress"
 	],
 	"author": {
-		"name": "Jacob Cassidy",
-		"email": "jacob@cassidydc.com",
+		"name": "CassidyDC",
+		"email": "info@cassidydc.com",
 		"url": "https://cassidydc.com"
 	},
-	"homepage": "https://github.com/CassidyDC/development-toolset/blob/main/README.md",
+	"homepage": "https://github.com/CassidyDC/cassidydc-toolset/blob/main/README.md",
 	"license": "MIT",
 	"type": "module",
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/CassidyDC/development-toolset"
+		"url": "https://github.com/CassidyDC/cassidydc-toolset"
 	},
 	"bugs": {
-		"url": "https://github.com/CassidyDC/development-toolset/issues"
+		"url": "https://github.com/CassidyDC/cassidydc-toolset/issues"
 	},
 	"devDependencies": {
 		"@cassidydc/eslint-plugin-wordpress": "^1.2.2",
 		"@cassidydc/stylelint-config-w3c-order": "^1.2.2",
-		"@eslint/compat": "^2.0.0",
-		"@eslint/js": "^9.39.1",
-		"@stylistic/stylelint-config": "^3.0.1",
-		"@wordpress/prettier-config": "^4.36.0",
-		"eslint": "^9.39.1",
-		"eslint-plugin-import-x": "^4.16.1",
-		"globals": "^16.5.0",
-		"lefthook": "^2.0.4",
-		"markdownlint-cli2": "^0.19.1",
+		"@eslint/compat": "^2.0.3",
+		"@eslint/js": "^9.39.4",
+		"@stylistic/stylelint-config": "^4.0.0",
+		"@wordpress/prettier-config": "^4.41.0",
+		"eslint": "^9.39.4",
+		"eslint-plugin-import-x": "^4.16.2",
+		"globals": "^17.4.0",
+		"lefthook": "^2.1.4",
+		"markdownlint-cli2": "^0.21.0",
 		"prettier": "npm:wp-prettier@^3.0.3",
-		"prettier-plugin-multiline-arrays": "^4.0.3",
-		"stylelint": "^16.26.1",
-		"stylelint-config-standard": "^39.0.1",
-		"stylelint-config-standard-scss": "^16.0.0",
-		"stylelint-declaration-block-no-ignored-properties": "^2.8.0",
-		"stylelint-high-performance-animation": "^1.11.0",
-		"stylelint-no-indistinguishable-colors": "^2.3.1",
-		"stylelint-order": "^7.0.0",
-		"stylelint-plugin-logical-css": "^1.2.3",
-		"stylelint-use-nesting": "^6.0.0",
-		"typescript-eslint": "^8.48.0"
+		"prettier-plugin-multiline-arrays": "^4.1.5",
+		"stylelint": "^17.4.0",
+		"stylelint-config-standard": "^40.0.0",
+		"stylelint-config-standard-scss": "^17.0.0",
+		"stylelint-declaration-block-no-ignored-properties": "^3.0.0",
+		"stylelint-high-performance-animation": "^2.0.0",
+		"stylelint-order": "^8.1.1",
+		"stylelint-plugin-logical-css": "^2.0.2",
+		"typescript-eslint": "^8.57.1"
 	},
+	"workspaces": [
+		"themes/cassidydc-block-theme"
+	],
 	"overrides": {
-		"@wordpress/babel-preset-default": {
-			"@babel/runtime": "^7.28.4"
+		"@wordpress/scripts": {
+			"@babel/runtime": "^7.28.6",
+			"webpack-dev-server": "^5.2.3"
 		}
 	},
 	"scripts": {
 		"check": "npx prettier . --check",
 		"format": "npx prettier . --write",
-		"lint:css": "npx stylelint \"**/*.{css,scss}\" --ignore-path .gitignore",
-		"lint:css:fix": "npx stylelint \"**/*.{css,scss}\" --ignore-path .gitignore --fix",
-		"lint:js": "npx eslint",
-		"lint:js:fix": "npx eslint --fix",
-		"lint:md": "npx markdownlint-cli2 \"**/*.md\"",
-		"lint:md:fix": "npx markdownlint-cli2 \"**/*.md\" --fix"
+		"hook:install": "npx lefthook install",
+		"lint:docs": "npx markdownlint-cli2 \"**/*.md\"",
+		"lint:docs:fix": "npx markdownlint-cli2 \"**/*.md\" --fix",
+		"lint:scripts": "npx eslint",
+		"lint:scripts:fix": "npx eslint --fix",
+		"lint:styles": "npx stylelint \"**/*.{css,scss}\" --ignore-path .gitignore",
+		"lint:styles:fix": "npx stylelint \"**/*.{css,scss}\" --ignore-path .gitignore --fix",
+		"build:theme": "npm run build --workspace themes/cassidydc-block-theme",
+		"start:theme": "npm run start --workspace themes/cassidydc-block-theme"
 	}
 }

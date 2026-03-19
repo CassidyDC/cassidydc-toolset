@@ -24,6 +24,7 @@
 
 # IGNORE BUILD FILES
 **/build
+**/dist
 
 # IGNORE LOCK FILES
 **/composer.lock
