@@ -20,5 +20,5 @@
 		"**.min.css": true,
 		"**.min.js": true,
 		"**/build/**": true
-	},
+	}
 }
