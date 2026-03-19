@@ -24,9 +24,11 @@ function createEntriesObj() {
 	const entries = {};
 	const sourceFilePaths = globSync( `${ sourceDir }**/*.{js,css,sass,scss}`, {
 		ignore: [
+			'**/classes/*.js',
 			'**/modules/*.js',
+			'**/utils/*.js',
 			'**/*.min.js',
-			'**/_*.{sass,scss}',
+			'**/_*.{css,sass,scss}',
 		],
 	} );
 
