@@ -1,16 +1,21 @@
-# IGNORE DEV ASSETS AND NODE MODULES
-node_modules
-/.dev-assets
+# Ignore development directories
 /.vscode
-/composer.json
-/phpcs.xml
-/phpstan.neon
-/package.json
+/node_modules
+/phpstan
+/vendor
+
+# Ignore development files
 /.editorconfig
 /.markdownlint-cli2.jsonc
 /.prettierignore
+/.shellcheckrc
+/composer.json
+/composer.lock
 /eslint.config.js
 /lefthook.yml
 /package-lock.json
+/package.json
+/phpcs.xml
+/phpstan.neon
 /prettier.config.js
 /stylelint.config.js
