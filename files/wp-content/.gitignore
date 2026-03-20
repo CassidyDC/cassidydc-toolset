@@ -35,4 +35,5 @@ breeze-minification
 cache
 wflogs
 advanced-cache.php
+db.php
 object-cache.php
