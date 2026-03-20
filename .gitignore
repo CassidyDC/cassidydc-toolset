@@ -1,5 +1,6 @@
 # Ignore development directories
 /.vscode
+/ddev-wp-local-setup
 /node_modules
 /phpstan
 /vendor
@@ -11,6 +12,7 @@
 /.shellcheckrc
 /composer.json
 /composer.lock
+/db.php
 /eslint.config.js
 /lefthook.yml
 /package-lock.json
