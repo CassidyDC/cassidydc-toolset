@@ -53,7 +53,8 @@
 	],
 	"overrides": {
 		"@wordpress/scripts": {
-			"@babel/runtime": "^7.28.6",
+			"minimatch": "^10.2.4",
+			"serialize-javascript": "^7.0.4",
 			"webpack-dev-server": "^5.2.3"
 		}
 	},
