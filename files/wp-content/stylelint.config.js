@@ -69,6 +69,7 @@ export default {
 				],
 			},
 		],
+		'rule-empty-line-before': [ 'always', { ignore: [ 'first-nested' ] } ],
 		'scss/selector-no-redundant-nesting-selector': true,
 		'selector-class-pattern': [
 			'^[a-z]([a-z0-9-]+)?(__([a-z0-9]+-?)+)?(--([a-z0-9]+-?)+){0,2}$',
