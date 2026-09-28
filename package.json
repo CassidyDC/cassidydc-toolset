@@ -1,0 +1,55 @@
+{
+  "name": "@cassidydc/cassidydc-toolset",
+  "displayName": "CassidyDC Toolset",
+  "version": "1.0.0",
+  "description": "CassidyDC's code formatting, linting, and scripting development toolset.",
+  "author": {
+    "name": "CassidyDC",
+    "email": "hello@cassidydc.com",
+    "url": "https://cassidydc.com"
+  },
+  "bin": {
+    "cdc-tools": "./src/cli.js"
+  },
+  "files": [
+    "src"
+  ],
+  "main": "src/cli.js",
+  "type": "module",
+  "homepage": "https://github.com/CassidyDC/cassidydc-toolset/blob/main/README.md",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/CassidyDC/cassidydc-toolset"
+  },
+  "bugs": {
+    "url": "https://github.com/CassidyDC/cassidydc-toolset/issues"
+  },
+  "license": "MIT",
+  "keywords": [
+    "eslint",
+    "formatter",
+    "linter",
+    "prettier",
+    "stylelint",
+    "wordpress"
+  ],
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "eslint": "^10.11.0",
+    "eslint-plugin-import-x": "^4.17.1",
+    "globals": "^17.12.0",
+    "lefthook": "^2.1.14",
+    "markdownlint-cli2": "^0.23.3",
+    "prettier": "^3.9.9",
+    "prettier-plugin-multiline-arrays": "^4.1.11"
+  },
+  "scripts": {
+    "check": "npx prettier . --check",
+    "format": "npx prettier . --write",
+    "hook:install": "npx lefthook install",
+    "lint:docs": "npx markdownlint-cli2 \"**/*.md\"",
+    "lint:docs:fix": "npx markdownlint-cli2 \"**/*.md\" --fix",
+    "lint:scripts": "npx eslint",
+    "lint:scripts:fix": "npx eslint --fix"
+  }
+}

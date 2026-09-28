@@ -1,0 +1,3 @@
+# Ignore development directories
+/node_modules
+/vendor
