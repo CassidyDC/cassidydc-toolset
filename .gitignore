@@ -1,3 +1,5 @@
 # Ignore development directories
 /node_modules
 /vendor
+docs/dev/previous
+docs/reference/previous
