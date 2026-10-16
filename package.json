@@ -9,7 +9,7 @@
     "url": "https://cassidydc.com"
   },
   "bin": {
-    "cdc-tools": "./src/cli.js"
+    "cdctool": "./src/cli.js"
   },
   "files": [
     "src"
