@@ -3,6 +3,5 @@
 /vendor
 
 # Ignore development files
-docs/dev/TODO.md
-docs/dev/previous
+docs/TODO.md
 docs/reference/previous
