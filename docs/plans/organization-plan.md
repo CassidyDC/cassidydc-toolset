@@ -1,0 +1,67 @@
+# Organization Plan
+
+```text
+bin/
+  cdctool.js
+src/
+  cli/
+    commands/
+    prompts/
+  /generator
+    resolve.js
+    plan.js
+    apply.js
+    package-graph.js
+    layouts/
+      single.js
+      nested.js
+      workspaces.js
+  components/
+    projects/
+        wordpress/
+          site.js
+          plugin.js
+          theme.js
+        node.js
+        php.js
+        python.js
+    capabilities/
+      react.js
+      typescript.js
+    standards/
+      javascript/
+        community.js
+        wordpress.js
+      css/
+        community.js
+        wordpress.js
+      php/
+        community.js
+        wordpress.js
+      python/
+        community.js
+    tools/
+      eslint/
+        definition.js
+        render.js
+        templates/
+      prettier/
+        definition.js
+        render.js
+        templates/
+      …other tools…
+  platform/
+    filesystem.js
+    npm.js
+    composer.js
+    python.js
+  contracts.js
+tests/
+  unit/
+  integration/
+  fixtures/
+docs/
+  architecture.md
+  adding-a-tool.md
+  generated-projects.md
+```

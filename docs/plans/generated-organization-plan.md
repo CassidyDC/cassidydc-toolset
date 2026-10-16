@@ -99,7 +99,7 @@ I would build a **configuration generator with a declarative catalog**, shipped 
 
 ```text
 bin/
-  cdc-tools.js
+  cdctool.js
 src/
   cli/
     commands/
@@ -171,12 +171,12 @@ CLI answers + saved selections + discovered project information
 
 Define internal contracts for `ProjectRequest`, `ResolvedProject`, `ToolContribution`, and `GenerationPlan`. JSDoc types are sufficient for the existing JavaScript codebase.
 
-Expose `cdc-tools init`, `cdc-tools update`, and a non-writing `--dry-run`. Use distinct selectors for projects, languages, tools, standards, and layouts. Replace the documented `--script=wordpress-site` terminology with `--project=wordpress-site`.
+Expose `cdctool init`, `cdctool update`, and a non-writing `--dry-run`. Use distinct selectors for projects, languages, tools, standards, and layouts. Replace the documented `--script=wordpress-site` terminology with `--project=wordpress-site`.
 
 Important behavior:
 
 - **Inheritance:** Project definitions provide defaults; explicit user selections override them. Children inherit resolved parent choices unless explicitly overridden.
-- **Saved selections:** Store the chosen setup and package paths in a versioned `.cdc-toolset.json`. Detect candidates, but configure only selected packages; exclude dependency and build directories.
+- **Saved selections:** Store the chosen setup and package paths in a versioned `.cassidydc-toolset.json`. Detect candidates, but configure only selected packages; exclude dependency and build directories.
 - **Editable output:** Generate self-contained files without imports from the toolset. Record generation state separately. On updates, automatically replace unchanged generated content; present conflicts for user-modified content before writing.
 - **Manifest preservation:** Preserve unrelated scripts, dependencies, and manifest fields. Conflicting existing script names require resolution rather than silent replacement.
 - **Dependency ecosystems:** Track npm, Composer, and Python requirements separately. Show installation commands by default; an explicit `--install` performs installation.

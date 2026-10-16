@@ -102,9 +102,8 @@ tests/
   integration/
   fixtures/
 docs/
-  dev/
-    plans/
-      architecture-plan.md
+  plans/
+    architecture-plan.md
   architecture.md
   adding-a-tool.md
   generated-projects.md
@@ -114,7 +113,7 @@ The tree describes the proposed toolset architecture. Each tool's `templates/` d
 
 ## Summary
 
-Use the structure in `docs/dev/plans/organization-plan.md`, with `generator/`, `components/`, and `standards/` as the agreed names. Each tool uses `definition.js`, `render.js`, and an optional `templates/` directory.
+Use the structure in `docs/plans/organization-plan.md`, with `generator/`, `components/`, and `standards/` as the agreed names. Each tool uses `definition.js`, `render.js`, and an optional `templates/` directory.
 
 The package will generate editable development configuration files from selections for project type, languages, capabilities, coding standards, tools, and package layout. It will support standalone projects, ordinary nested packages, and npm workspaces.
 
@@ -134,7 +133,7 @@ bin/
 | `bin/`       | Contains executable entry points distributed with the npm package.                                                                                                                   |
 | `cdctool.js` | Provides the Node.js executable header, starts the CLI, and translates completion or failure into a process exit code. Keep argument handling and generation logic out of this file. |
 
-Keep the existing public command name, `cdc-tools`, and point its `package.json` `bin` entry to `bin/cdctool.js`. The executable filename does not require renaming the command.
+Keep the existing public command name, `cdctool`, and point its `package.json` `bin` entry to `bin/cdctool.js`. The executable filename does not require renaming the command.
 
 ### CLI
 
@@ -386,9 +385,8 @@ tests/
 
 ```text
 docs/
-  dev/
-    plans/
-      architecture-plan.md
+  plans/
+    architecture-plan.md
   architecture.md
   adding-a-tool.md
   generated-projects.md
@@ -397,14 +395,13 @@ docs/
 | Path                    | Responsibility                                                                                                                          |
 | ----------------------- | --------------------------------------------------------------------------------------------------------------------------------------- |
 | `docs/`                 | Contains architecture, contributor, and generated-project reference material.                                                           |
-| `dev/`                  | Groups development planning material.                                                                                                   |
 | `plans/`                | Contains proposed implementation and organization plans.                                                                                |
 | `architecture-plan.md`  | Records this proposed structure, subsystem responsibilities, and validation requirements.                                               |
 | `architecture.md`       | Explains subsystem boundaries, dependency direction, contracts, and the resolution-to-application pipeline.                             |
 | `adding-a-tool.md`      | Documents tool definitions, rendering, templates, dependency declarations, script and hook contributions, registration, and testing.    |
 | `generated-projects.md` | Shows generated standalone and multi-package examples, configuration ownership, standards overrides, root scripts, and update behavior. |
 
-Keep the organization plan under `docs/dev/plans/`. Use the root `README.md` for installation and usage, and `CHANGELOG.md` for completed user-visible changes.
+Keep the organization plan under `docs/plans/`. Use the root `README.md` for installation and usage, and `CHANGELOG.md` for completed user-visible changes.
 
 ## Generation flow and ownership
 
@@ -416,7 +413,7 @@ Keep the organization plan under `docs/dev/plans/`. Use the root `README.md` for
 6. The CLI presents proposed changes and any conflicts.
 7. The application step writes validated changes and optionally installs dependencies.
 
-Generated files are self-contained and user-editable. Store reproducible selections in a versioned `.cdc-toolset.json` and generation metadata separately in `.cdc-toolset-state.json`.
+Generated files are self-contained and user-editable. Store reproducible selections in a versioned `.cassidydc-toolset.json` and generation metadata separately in `.cassidydc-toolset-state.json`.
 
 Updates may replace unchanged generated content automatically. Modified files and conflicting manifest entries must be presented for resolution before writing. Preserve unrelated manifest fields, scripts, and dependencies.
 
